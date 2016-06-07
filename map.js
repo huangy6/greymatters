@@ -29,9 +29,9 @@ jQuery.getJSON(blogURL, function(data) {
     function markerPopup(tag, taggedPosts) {
         var popupHTML = '<h2>Posts about ' + tag + '</h2>\n<ul>';
         jQuery.each(taggedPosts, function(i, post) {
-            popupHTML.concat('<li><a href=' + post.fullUrl + '> ' +
-                             post.title + '</a></li>\n');
+            popupHTML += '<li><a href=' + post.fullUrl + '> ' +
+                             post.title + '</a></li>\n';
         });
-        return popupHTML.concat('</ul>');
+        return popupHTML + '</ul>';
     }
 });
