@@ -23,7 +23,7 @@ jQuery.getJSON(blogURL, function(data) {
             jQuery.inArray(tag, elem.tags);
         });
         //Add any marker magic here
-        return L.Marker([0, 0]).bindPopup(markerPopup(tag, taggedPosts));
+        return L.marker([0, 0]).bindPopup(markerPopup(tag, taggedPosts));
     }
 
     function markerPopup(tag, taggedPosts) {
