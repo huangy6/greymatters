@@ -2,7 +2,9 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiaHVhbmd5IiwiYSI6ImNpcDBrb241NTAyaWJ1MG00cjc1N
 
 var blogURL = "/sherrywauscedu?format=json",
     geocoder = L.mapbox.geocoder('mapbox.places'),
-    map = L.mapbox.map('map', 'https://api.mapbox.com/styles/v1/huangy/cip227euj000dbom5qn6c7ojs/').setView([0, 0], 3);
+    map = L.mapbox.map('map').setView([0, 0], 3);
+
+L.mapbox.styleLayer('mapbox://styles/huangy/cip227euj000dbom5qn6c7ojs').addTo(map);
 
 jQuery.getJSON(blogURL, function(data) {
     var posts = data.items;
