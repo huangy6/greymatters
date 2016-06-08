@@ -20,7 +20,7 @@ jQuery.getJSON(blogURL, function(data) {
     function createMarker(tag) {
         // Creates a marker which aggregates all posts tagged with a given location
         var taggedPosts = jQuery.grep(posts, function(elem, i) {
-            return jQuery.inArray(tag, elem.tags) > 0;
+            return jQuery.inArray(tag, elem.tags) >= 0;
         });
         //Add any marker magic here
         return L.marker([0, 0]).bindPopup(markerPopup(tag, taggedPosts));
