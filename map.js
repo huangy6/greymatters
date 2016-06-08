@@ -2,7 +2,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiaHVhbmd5IiwiYSI6ImNpcDBrb241NTAyaWJ1MG00cjc1N
 
 var blogURL = "/sherrywauscedu?format=json",
     geocoder = L.mapbox.geocoder('mapbox.places'),
-    map = L.mapbox.map('map').setView([40, 86], 2);
+    map = L.mapbox.map('map').setView([14.5, -1], 2);
 
 L.mapbox.styleLayer('mapbox://styles/huangy/cip227euj000dbom5qn6c7ojs').addTo(map);
 // map.scrollZoom.disable();
