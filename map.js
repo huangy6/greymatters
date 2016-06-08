@@ -2,9 +2,10 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiaHVhbmd5IiwiYSI6ImNpcDBrb241NTAyaWJ1MG00cjc1N
 
 var blogURL = "/sherrywauscedu?format=json",
     geocoder = L.mapbox.geocoder('mapbox.places'),
-    map = L.mapbox.map('map').setView([0, 0], 3);
+    map = L.mapbox.map('map').setView([40, 86], 2);
 
 L.mapbox.styleLayer('mapbox://styles/huangy/cip227euj000dbom5qn6c7ojs').addTo(map);
+// map.scrollZoom.disable();
 
 jQuery.getJSON(blogURL, function(data) {
     var posts = data.items;
@@ -27,7 +28,8 @@ jQuery.getJSON(blogURL, function(data) {
     }
 
     function markerPopup(tag, taggedPosts) {
-        var popupHTML = '<h2>Posts about ' + tag + '</h2>\n<ul>';
+        var popupHTML = '<style> {a:hover {color:#365563}}</style>';
+        popupHTML += '<h2><b>Posts about</b> ' + tag + '</h2>\n<ul>';
         jQuery.each(taggedPosts, function(i, post) {
             popupHTML += '<li><a href=' + post.fullUrl + '> ' +
                              post.title + '</a></li>\n';
