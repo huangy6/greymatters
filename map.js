@@ -4,14 +4,15 @@ var blogURL = "/sherrywauscedu?format=json",
     geocoder = L.mapbox.geocoder('mapbox.places'),
     map = L.mapbox.map('map', 'mapbox.light', {
         maxBounds: [[-90, -180], [90, 180]],
-        minZoom: 2,
-        tileLayer: {
-            continuousWorld: false,
-            noWrap: true
-        }
+        minZoom: 2
     }).setView([14.5, -1], 2);
 
-L.mapbox.styleLayer('mapbox://styles/huangy/cip227euj000dbom5qn6c7ojs').addTo(map);
+L.mapbox.styleLayer('mapbox://styles/huangy/cip227euj000dbom5qn6c7ojs', {
+    // This map option disables world wrapping. by default, it is false.
+    continuousWorld: false,
+    // This option disables loading tiles outside of the world bounds.
+    noWrap: true
+}).addTo(map);
 // map.scrollZoom.disable();
 
 var markerIcon = L.icon ({
