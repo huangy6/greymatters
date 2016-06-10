@@ -2,11 +2,12 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiaHVhbmd5IiwiYSI6ImNpcDBrb241NTAyaWJ1MG00cjc1N
 
 var blogURL = "/sherrywauscedu?format=json",
     geocoder = L.mapbox.geocoder('mapbox.places'),
-    map = L.mapbox.map('map', 'mapbox.light', {
+    map = L.mapbox.map('map', {
+        maxBounds: [[-90, -180], [90, 180]],
+        minZoom: 2,
         tileLayer: {
             continuousWorld: false,
-            noWrap: true,
-            minZoom: 2
+            noWrap: true
         }
     }).setView([14.5, -1], 2);
 
