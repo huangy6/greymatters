@@ -7,6 +7,11 @@ var blogURL = "/sherrywauscedu?format=json",
 L.mapbox.styleLayer('mapbox://styles/huangy/cip227euj000dbom5qn6c7ojs').addTo(map);
 // map.scrollZoom.disable();
 
+var markerIcon = L.icon ({
+    iconUrl: 'https://static1.squarespace.com/static/5743798a4c2f85e9706d6da3/t/575a31f0c6fc08644b959f43/1465528833432/mapmarker.png',
+    iconSize: [20, 35]
+});
+
 jQuery.getJSON(blogURL, function(data) {
     var posts = data.items;
     jQuery.each(data.collection.tags, placeMarker);
@@ -24,7 +29,7 @@ jQuery.getJSON(blogURL, function(data) {
             return jQuery.inArray(tag, elem.tags) >= 0;
         });
         //Add any marker magic here
-        return L.marker([0, 0]).bindPopup(markerPopup(tag, taggedPosts));
+        return L.marker([0, 0], {icon: markerIcon}).bindPopup(markerPopup(tag, taggedPosts));
     }
 
     function markerPopup(tag, taggedPosts) {
