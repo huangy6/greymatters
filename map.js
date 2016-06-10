@@ -2,7 +2,7 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiaHVhbmd5IiwiYSI6ImNpcDBrb241NTAyaWJ1MG00cjc1N
 
 var blogURL = "/sherrywauscedu?format=json",
     geocoder = L.mapbox.geocoder('mapbox.places'),
-    map = L.mapbox.map('map', {
+    map = L.mapbox.map('map', 'mapbox.light', {
         maxBounds: [[-90, -180], [90, 180]],
         minZoom: 2,
         tileLayer: {
