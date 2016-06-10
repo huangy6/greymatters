@@ -2,14 +2,21 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiaHVhbmd5IiwiYSI6ImNpcDBrb241NTAyaWJ1MG00cjc1N
 
 var blogURL = "/sherrywauscedu?format=json",
     geocoder = L.mapbox.geocoder('mapbox.places'),
-    map = L.mapbox.map('map').setView([14.5, -1], 2);
+    map = L.mapbox.map('map', 'mapbox.light', {
+        tileLayer: {
+            continuousWorld: false,
+            noWrap: true,
+            minZoom: 2
+        }
+    }).setView([14.5, -1], 2);
 
 L.mapbox.styleLayer('mapbox://styles/huangy/cip227euj000dbom5qn6c7ojs').addTo(map);
 // map.scrollZoom.disable();
 
 var markerIcon = L.icon ({
     iconUrl: 'https://static1.squarespace.com/static/5743798a4c2f85e9706d6da3/t/575a31f0c6fc08644b959f43/1465528833432/mapmarker.png',
-    iconSize: [20, 35]
+    iconSize: [20, 35],
+    iconAnchor: [10, 35]
 });
 
 jQuery.getJSON(blogURL, function(data) {
