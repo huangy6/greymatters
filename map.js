@@ -17,8 +17,8 @@ L.mapbox.styleLayer('mapbox://styles/huangy/cip227euj000dbom5qn6c7ojs', {
 
 var markerIcon = L.icon ({
     iconUrl: '/s/mapmarker.png',
-    iconSize: [20, 35],
-    iconAnchor: [10, 35]
+    iconSize: [17, 40],
+    iconAnchor: [9, 40]
 });
 
 jQuery.getJSON(blogURL, function(data) {
