@@ -16,7 +16,7 @@ L.mapbox.styleLayer('mapbox://styles/huangy/cip227euj000dbom5qn6c7ojs', {
 // map.scrollZoom.disable();
 
 var markerIcon = L.icon ({
-    iconUrl: 'https://static1.squarespace.com/static/5743798a4c2f85e9706d6da3/t/575a31f0c6fc08644b959f43/1465528833432/mapmarker.png',
+    iconUrl: '/s/mapmarker.png',
     iconSize: [20, 35],
     iconAnchor: [10, 35]
 });
