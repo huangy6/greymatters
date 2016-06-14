@@ -42,7 +42,7 @@ jQuery.getJSON(blogURL, function(data) {
     }
 
     function markerPopup(tag, taggedPosts) {
-        var popupHTML = '<style scoped> .markertext:hover {color:#365563;} </style>';
+        var popupHTML = '<style scoped> .markertext:hover {color:#365563;} .leaflet-container a:hover { color: #365563; } </style>';
         popupHTML += '<h2><b>Posts about ' + tag + '</h2></b>\n<ul>';
         jQuery.each(taggedPosts, function(i, post) {
             popupHTML += '<li><a href=' + post.fullUrl + ' class="markertext"> ' +
