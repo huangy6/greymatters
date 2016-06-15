@@ -1,6 +1,6 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoiaHVhbmd5IiwiYSI6ImNpcDBrb241NTAyaWJ1MG00cjc1Nmcwb3UifQ.1q77Pdqwy-hMPyRDdJlfuA';
 
-var blogURL = "/sherrywauscedu?format=json",
+var blogURL = "/blog?format=json",
     geocoder = L.mapbox.geocoder('mapbox.places'),
     map = L.mapbox.map('map', 'mapbox.light', {
         maxBounds: [[-90, -180], [90, 180]],
