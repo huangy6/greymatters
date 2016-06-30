@@ -23,13 +23,26 @@ var markerIcon = L.icon ({
 
 jQuery.getJSON(blogURL, function(data) {
     var posts = data.items;
-    jQuery.each(data.collection.tags, placeMarker);
+    var usedTags = data.collection.tags.filter(checkUsed);
+    jQuery.each(usedTags, placeMarker);
 
     function placeMarker(i, tag) {
         // For each tag, place a marker on the map at the given location
+        // but only the ones actualy used
         geocoder.query(tag, function(error, results) {
             createMarker(tag).setLatLng(results.latlng).addTo(map);
         });
+    }
+
+    function checkUsed(tag, i, tags) {
+        // Check that a tag is used
+        var post;
+        for (post in posts) {
+            if (jQuery.inArray(tag, post.tags) > -1) {
+                return true;
+            }
+        }
+        return false;
     }
 
     function createMarker(tag) {
