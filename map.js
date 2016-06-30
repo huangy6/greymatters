@@ -37,7 +37,7 @@ jQuery.getJSON(blogURL, function(data) {
     function checkUsed(tag, i, tags) {
         // Check that a tag is used
         var post;
-        for (post in posts) {
+        for (post of posts) {
             if (jQuery.inArray(tag, post.tags) > -1) {
                 return true;
             }
