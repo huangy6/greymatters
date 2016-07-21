@@ -1,7 +1,7 @@
 L.mapbox.accessToken = 'pk.eyJ1IjoiaHVhbmd5IiwiYSI6ImNpcDBrb241NTAyaWJ1MG00cjc1Nmcwb3UifQ.1q77Pdqwy-hMPyRDdJlfuA';
 
 var blogURL = "/blog?format=json",
-    geocoder = L.mapbox.geocoder('mapbox.places'),
+    geocoder = google.maps.Geocoder(),
     map = L.mapbox.map('map', 'mapbox.light', {
         maxBounds: [[-90, -180], [90, 180]],
         minZoom: 2
@@ -29,8 +29,8 @@ jQuery.getJSON(blogURL, function(data) {
     function placeMarker(i, tag) {
         // For each tag, place a marker on the map at the given location
         // but only the ones actualy used
-        geocoder.query(tag, function(error, results) {
-            createMarker(tag).setLatLng(results.latlng).addTo(map);
+        geocoder.geocode({'address': tag}, function(results, status) {
+            createMarker(tag).setLatLng(results.geometry.location).addTo(map);
         });
     }
 
