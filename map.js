@@ -30,7 +30,7 @@ jQuery.getJSON(blogURL, function(data) {
         // For each tag, place a marker on the map at the given location
         // but only the ones actualy used
         geocoder.geocode({'address': tag}, function(results, status) {
-            createMarker(tag).setLatLng(results[0].geometry.location).addTo(map);
+            createMarker(tag).setLatLng(results[0].geometry.location.toJSON()).addTo(map);
         });
     }
 
