@@ -24,7 +24,7 @@ var markerIcon = L.icon ({
 jQuery.getJSON(blogURL, function(data) {
     var posts = data.items;
     var usedTags = data.collection.tags.filter(checkUsed);
-    jQuery.each(usedTags, function(i, tag) {window.setTimeout(100, placeMarker(i, tag));});
+    jQuery.each(usedTags, function(i, tag) {window.setTimeout(200, placeMarker(i, tag));});
 
     function placeMarker(i, tag) {
         // For each tag, place a marker on the map at the given location
